@@ -95,6 +95,20 @@ trait Daily
         return $this;
     }
 
+    public function snowfallSum(): self
+    {
+        $this->withQuery(['daily' => 'snowfall_sum']);
+
+        return $this;
+    }
+
+    public function rainSum(): self
+    {
+        $this->withQuery(['daily' => 'rain_sum']);
+
+        return $this;
+    }
+
     public function allDaily(): self
     {
         $this
@@ -110,7 +124,9 @@ trait Daily
             ->windSpeed_10mMax()
             ->windGusts_10mMax()
             ->windDirection_10mDominant()
-            ->shortwaveRadiationSum();
+            ->shortwaveRadiationSum()
+            ->snowfallSum()
+            ->rainSum();
 
         return $this;
     }
