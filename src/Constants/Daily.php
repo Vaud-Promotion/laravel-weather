@@ -109,6 +109,13 @@ trait Daily
         return $this;
     }
 
+    public function forecastDays(int $days): self
+    {
+        $this->withQuery(['forecast_days' => $days]);
+
+        return $this;
+    }
+
     public function allDaily(): self
     {
         $this
